@@ -8,7 +8,10 @@ public class CampFire : MonoBehaviour
 {
     [SerializeField] private Light2D _light;
     [SerializeField] private Animator _animator;
+    [SerializeField] private AudioSource _turnOnSFX;
+    [SerializeField] private AudioSource _fireSFX;
     [SerializeField] private bool _startActivated;
+    [SerializeField] private bool _dontTurnOff;
     [SerializeField] private int _lightIntensity;
     [SerializeField] private int _fireDuration;
 
@@ -20,8 +23,14 @@ public class CampFire : MonoBehaviour
 
     public void ActivateCampFire()
     {
-        _torchTween.Kill();
+        if (!_isActivated)
+        {
+            _turnOnSFX.Play();
+        }
+
         _animator.SetTrigger("Play");
+        _torchTween.Kill();
+        _fireSFX.Play();
         _currentFireDuration = _fireDuration;
         _isActivated = true;
 
@@ -35,6 +44,7 @@ public class CampFire : MonoBehaviour
     {
         _isActivated = false;
         _animator.SetTrigger("Stop");
+        _fireSFX.Stop();
     }
 
     private void Start()
@@ -47,7 +57,7 @@ public class CampFire : MonoBehaviour
 
     private void Update()
     {
-        if (_isActivated)
+        if (_isActivated && !_dontTurnOff)
         {
             _currentFireDuration -= Time.deltaTime;
         }

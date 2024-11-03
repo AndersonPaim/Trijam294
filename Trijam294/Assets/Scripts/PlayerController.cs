@@ -14,6 +14,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private Rigidbody2D _rb;
     [SerializeField] private Light2D _torchLight;
+    [SerializeField] private AudioSource _turnOnfireSFX;
+    [SerializeField] private AudioSource _turnOfffireSFX;
+    [SerializeField] private AudioSource _fireSFX;
     [SerializeField] private string _exitTag;
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _torchLightIntensity;
@@ -28,6 +31,8 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        _fireSFX.Play();
+        _turnOnfireSFX.Play();
         _currentTorchDuration = _torchDuration;
         _torchTween = DOTween.To(() => _torchLight.intensity, x => _torchLight.intensity = x, 0, _torchDuration).OnComplete(TorchTurnOff); ;
     }
@@ -93,6 +98,7 @@ public class PlayerController : MonoBehaviour
 
     private void RechargeTorch()
     {
+        _turnOnfireSFX.Play();
         _isRecharging = true;
         _currentTorchDuration = _torchDuration;
         _torchTween.Kill();
@@ -108,6 +114,8 @@ public class PlayerController : MonoBehaviour
 
     private void TorchTurnOff()
     {
+        _fireSFX.Stop();
+        _turnOfffireSFX.Play();
         OnTorchTurnOff?.Invoke();
     }
 
