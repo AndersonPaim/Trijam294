@@ -127,7 +127,6 @@ public class PlayerController : MonoBehaviour
 
         if (trap)
         {
-            Debug.Log("TRAP");
             trap.EnterTrap();
             OnDeath?.Invoke();
         }
