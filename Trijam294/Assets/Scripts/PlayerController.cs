@@ -27,8 +27,14 @@ public class PlayerController : MonoBehaviour
 
     private bool _hasTorch = true;
     private bool _isRecharging = false;
+    private bool _canMove = true;
     private float _currentTorchDuration;
     private Tween _torchTween;
+
+    public void StopMovement()
+    {
+        _canMove = false;
+    }
 
     private void Start()
     {
@@ -51,6 +57,11 @@ public class PlayerController : MonoBehaviour
     private void Movement()
     {
         _rb.velocity = new Vector2(0, 0);
+
+        if (!_canMove)
+        {
+            return;
+        }
 
         Vector2 newVelocity = _rb.velocity;
 

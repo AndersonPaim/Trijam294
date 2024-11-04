@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private List<GameObject> _exitPlaces = new List<GameObject>();
     [SerializeField] private PlayerController _playerController;
     [SerializeField] private GameObject _gameOverUI;
     [SerializeField] private GameObject _gameCompletedUI;
 
     private void Start()
     {
+        InitializeExitLocation();
         Time.timeScale = 1;
         _playerController.OnTorchTurnOff += GameOver;
         _playerController.OnDeath += GameOver;
@@ -26,13 +28,21 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
+        _playerController.StopMovement();
         _gameOverUI.SetActive(true);
     }
 
     private void GameCompleted()
     {
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
+        _playerController.StopMovement();
         _gameCompletedUI.SetActive(true);
+    }
+
+    private void InitializeExitLocation()
+    {
+        int random = Random.Range(0, _exitPlaces.Count - 1);
+        _exitPlaces[random].SetActive(true);
     }
 }
