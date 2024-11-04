@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3583097979329772162, guid: 619098a52a05c564196e9e1b9ea87e03, type: 3}
       propertyPath: m_Name
-      value: Tree4
+      value: Arvore4
       objectReference: {fileID: 0}
     - target: {fileID: 3935551520119506119, guid: 619098a52a05c564196e9e1b9ea87e03, type: 3}
       propertyPath: m_Size.x

@@ -66,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2297150734680683123, guid: dd59336fd1666c84f9480723aa8b945a, type: 3}
       propertyPath: m_Name
-      value: Tree5
+      value: Arvore5
       objectReference: {fileID: 0}
     - target: {fileID: 4381700899869757641, guid: dd59336fd1666c84f9480723aa8b945a, type: 3}
       propertyPath: m_Sprite
