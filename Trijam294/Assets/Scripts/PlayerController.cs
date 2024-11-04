@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
 {
     public Action OnTorchTurnOff;
     public Action OnFindExit;
+    public Action OnDeath;
 
     [SerializeField] private Animator _animator;
     [SerializeField] private Rigidbody2D _rb;
@@ -122,6 +123,14 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         CampFire campfire = other.GetComponent<CampFire>();
+        Trap trap = other.GetComponent<Trap>();
+
+        if (trap)
+        {
+            Debug.Log("TRAP");
+            trap.EnterTrap();
+            OnDeath?.Invoke();
+        }
 
         if (campfire)
         {

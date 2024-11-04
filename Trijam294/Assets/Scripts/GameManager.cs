@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -12,12 +13,14 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         _playerController.OnTorchTurnOff += GameOver;
+        _playerController.OnDeath += GameOver;
         _playerController.OnFindExit += GameCompleted;
     }
 
     private void OnDestroy()
     {
         _playerController.OnTorchTurnOff -= GameOver;
+        _playerController.OnDeath -= GameOver;
         _playerController.OnFindExit -= GameCompleted;
     }
 
