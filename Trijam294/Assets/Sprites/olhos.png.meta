@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: olhos_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1327
+        width: 1460
+        height: 483
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff047f58712cf184187926f8171886ad
+      internalID: 2103395168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: olhos_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 634
+        width: 1461
+        height: 445
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38644e0ecc3c50e4cb4f4e76c74c89dc
+      internalID: 1398951243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: olhos_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1461
+        height: 391
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b41b080cfc1ab94ebaba96019cbf771
+      internalID: 2029733931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +195,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      olhos_0: 2103395168
+      olhos_1: 821845335
+      olhos_2: 1398951243
+      olhos_3: 1679453115
+      olhos_4: 2029733931
+      olhos_5: -328373592
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
