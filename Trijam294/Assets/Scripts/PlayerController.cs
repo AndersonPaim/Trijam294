@@ -36,6 +36,11 @@ public class PlayerController : MonoBehaviour
         _canMove = false;
     }
 
+    public void StartMovement()
+    {
+        _canMove = true;
+    }
+
     private void Start()
     {
         _fireSFX.Play();

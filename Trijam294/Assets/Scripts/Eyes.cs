@@ -12,8 +12,8 @@ public class Eyes : MonoBehaviour
 
     public void Initialize(float delay, PlayerController player)
     {
-        StartCoroutine(DisapearDelay(delay));
         _player = player;
+        StartCoroutine(DisapearDelay(delay));
     }
 
     private IEnumerator DisapearDelay(float delay)
@@ -30,6 +30,11 @@ public class Eyes : MonoBehaviour
 
     private void Update()
     {
+        if (!_player)
+        {
+            return;
+        }
+
         if (Vector3.Distance(transform.position, _player.transform.position) < _maxPlayerDistance)
         {
             Disapear();
