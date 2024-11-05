@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _gameOverUI;
     [SerializeField] private GameObject _gameCompletedUI;
 
+    private bool _gameOver = false;
+
     private void Start()
     {
         InitializeExitLocation();
@@ -28,6 +30,11 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
+        if (_gameOver)
+        {
+            return;
+        }
+
         //Time.timeScale = 0;
         _playerController.StopMovement();
         _gameOverUI.SetActive(true);
@@ -35,6 +42,7 @@ public class GameManager : MonoBehaviour
 
     private void GameCompleted()
     {
+        _gameOver = true;
         //Time.timeScale = 0;
         _playerController.StopMovement();
         _gameCompletedUI.SetActive(true);
